@@ -54,29 +54,44 @@ st.markdown("""
 
 /* ======== Divider ======== */
 hr {
-    margin: 0.2rem 0rem !important;
-    padding: 0 !important;
+    margin: 0.1rem 0rem !important;
+    padding: 2px 0 5px 0 !important;
     border-width: 1px !important;
 }
 
 /* ======== Títulos ======== */
-h1 {font-size: 1.8rem !important; margin-bottom: 0.5rem !important;}
-h2 {font-size: 1.3rem !important; margin-bottom: 0.3rem !important;}
-h3 {font-size: 1.1rem !important; margin-bottom: 0.2rem !important;}
+h1 {font-size: 1.8rem !important; margin-bottom: 0.4rem !important;}
+h2 {font-size: 1.2rem !important; margin-bottom: 0.3rem !important;}
+h3 {font-size: 1.0rem !important; margin-bottom: 0.2rem !important;}
 
 /* ======== Sliders e inputs ======== */
 .stSlider {margin-bottom: 0.2rem !important;}
-.stNumberInput {margin-top: -0.5rem !important;}
+.stNumberInput {margin-top: -0.4rem !important;}
 
 /* ======== Métricas ======== */
 div[data-testid="metric-container"] {
     margin: 0rem !important;
-    padding: 0.2rem 0rem !important;
+    padding: 0rem 0rem !important;
+}
+div[data-testid="stMetricLabel"] > div {
+    font-size: 0.75rem !important;  /* diminui o texto da label */
+}
+div[data-testid="stMetricValue"] > div {
+    font-size: 1.0rem !important;   /* diminui o número da métrica */
+    line-height: 1.2rem !important;
 }
 
 /* ======== Cards customizados ======== */
 div[data-testid="stMarkdownContainer"] > div {
     margin-bottom: 0rem !important;
+}
+
+/* ======== Cards principais ======== */
+div.card-principal h3 {
+    font-size: 1.8rem !important; /* aumenta o valor principal */
+}
+div.card-principal h5 {
+    font-size: 2.0rem !important; /* título levemente maior */
 }
 </style>
 """, unsafe_allow_html=True)
@@ -115,7 +130,7 @@ with col6:
     custo_packing = st.slider("R$/Cx Packing", 1.0, 15.0, 5.0, 0.1, key="s6")
 
 with col7:
-    desp_adm = st.slider("Desp. Adm (R$/Cx)", 0.0, 10.0, 2.32, 0.1, key="s7")
+    desp_adm = st.slider("Desp. Adm (R$/Cx)", 0.0, 10.0, 2.30, 0.1, key="s7")
 
 with col8:
     desp_financeira = st.slider("Desp. Financeira (R$/Cx)", 0.0, 10.0, 1.0, 0.1, key="s8")
@@ -153,6 +168,8 @@ with col_r1:
     </div>
     """, unsafe_allow_html=True)
 
+    st.divider()
+
     st.metric("📦 Caixas", f"{br(qtd_caixas, 0)}")
 
 with col_r2:
@@ -164,6 +181,8 @@ with col_r2:
     </div>
     """, unsafe_allow_html=True)
 
+    st.divider()
+
     st.metric("📊 Margem Líquida", f"{br(margem_liquida, 1)}%")
 
 with col_r3:
@@ -174,7 +193,53 @@ with col_r3:
     </div>
     """, unsafe_allow_html=True)
 
+    st.divider()
+
     st.metric("🌾 Produção", f"{br(producao_total_ton, 0)} ton")
+
+
+
+# ===== Exibição dos resultados (4 colunas) =====
+# col_r1, col_r2, col_r3, col_r4, col_r5 = st.columns([1, 1, 1, 0.7, 0.8])
+
+# # ==== Coluna 1 - Faturamento ====
+# with col_r1:
+#     st.markdown(f"""
+#     <div style='background-color: #1e7ba3; padding: 8px; border-radius: 8px; margin-bottom: 8px;'>
+#         <h5 style='color: white; margin: 0; font-size: 0.9rem;'>💰 Faturamento Próprio</h5>
+#         <h3 style='color: white; margin: 5px 0; font-size: 1.4rem;'>R$ {br(faturamento_proporcional, 0)}</h3>
+#     </div>
+#     """, unsafe_allow_html=True)
+
+# # ==== Coluna 2 - Lucro Líquido ====
+# with col_r2:
+#     cor_lucro = "#2d5016" if lucro_liquido >= 0 else "#8B0000"
+#     st.markdown(f"""
+#     <div style='background-color: {cor_lucro}; padding: 8px; border-radius: 8px; margin-bottom: 8px;'>
+#         <h5 style='color: white; margin: 0; font-size: 0.9rem;'>💵 Lucro Líquido</h5>
+#         <h3 style='color: white; margin: 5px 0; font-size: 1.4rem;'>R$ {br(lucro_liquido, 0)}</h3>
+#     </div>
+#     """, unsafe_allow_html=True)
+
+# # ==== Coluna 3 - PPR ====
+# with col_r3:
+#     st.markdown(f"""
+#     <div style='background-color: #812378; padding: 8px; border-radius: 8px; margin-bottom: 8px;'>
+#         <h5 style='color: white; margin: 0; font-size: 0.9rem;'>👥 PPR (10%)</h5>
+#         <h3 style='color: white; margin: 5px 0; font-size: 1.4rem;'>{br(participacao_resultados, 2)}</h3>
+#     </div>
+#     """, unsafe_allow_html=True)
+
+# # ==== Coluna 4 - Métricas empilhadas ====
+# with col_r4:
+#     st.metric("📦 Caixas", f"{br(qtd_caixas, 0)}")
+#     st.metric("📊 Margem Líquida", f"{br(margem_liquida, 1)}%")
+
+# with col_r5:
+#     st.metric("🌾 Produção", f"{br(producao_total_ton, 0)} ton")
+
+
+
 
 st.divider()
 
