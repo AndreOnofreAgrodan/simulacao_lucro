@@ -13,35 +13,74 @@ def br(num, decimais=2):
 st.set_page_config(page_title="Simulações - E se?", layout="wide")
 
 # ===== CSS customizado =====
+
+# st.markdown("""
+# <style>
+#     .block-container {
+#             padding-top: 1.2rem; padding-bottom: 0rem;
+#         }
+            
+#     hr {
+#         margin: 2px 0px;
+#         }
+            
+#     h1 {
+#         font-size: 1.8rem; margin-bottom: 0.5rem;
+#         }
+            
+#     h2 {
+#         font-size: 1.3rem; margin-bottom: 0.3rem;
+#         }
+            
+#     h3 {
+#         font-size: 1.1rem; margin-bottom: 0.2rem;
+#         }
+            
+#     .stSlider {
+#         margin-bottom: 0.2rem;}
+#     .stNumberInput {margin-top: -0.5rem;}
+#     div[data-testid="metric-container"] {padding: 0.3rem;}
+
+# </style>
+# """, unsafe_allow_html=True)
+
 st.markdown("""
 <style>
-    .block-container {
-            padding-top: 1.2rem; padding-bottom: 0rem;
-        }
-            
-    hr {
-        margin: 2px 0px;
-        }
-            
-    h1 {
-        font-size: 1.8rem; margin-bottom: 0.5rem;
-        }
-            
-    h2 {
-        font-size: 1.3rem; margin-bottom: 0.3rem;
-        }
-            
-    h3 {
-        font-size: 1.1rem; margin-bottom: 0.2rem;
-        }
-            
-    .stSlider {
-        margin-bottom: 0.2rem;}
-    .stNumberInput {margin-top: -0.5rem;}
-    div[data-testid="metric-container"] {padding: 0.3rem;}
+/* ======== Ajuste de espaçamento global ======== */
+.block-container {
+    padding-top: 0.8rem !important;
+    padding-bottom: 0rem !important;
+}
 
+/* ======== Divider ======== */
+hr {
+    margin: 0.2rem 0rem !important;
+    padding: 0 !important;
+    border-width: 1px !important;
+}
+
+/* ======== Títulos ======== */
+h1 {font-size: 1.8rem !important; margin-bottom: 0.5rem !important;}
+h2 {font-size: 1.3rem !important; margin-bottom: 0.3rem !important;}
+h3 {font-size: 1.1rem !important; margin-bottom: 0.2rem !important;}
+
+/* ======== Sliders e inputs ======== */
+.stSlider {margin-bottom: 0.2rem !important;}
+.stNumberInput {margin-top: -0.5rem !important;}
+
+/* ======== Métricas ======== */
+div[data-testid="metric-container"] {
+    margin: 0rem !important;
+    padding: 0.2rem 0rem !important;
+}
+
+/* ======== Cards customizados ======== */
+div[data-testid="stMarkdownContainer"] > div {
+    margin-bottom: 0rem !important;
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 # ===== Título =====
 st.title("🌾 Simulações - \"E se?\"")
