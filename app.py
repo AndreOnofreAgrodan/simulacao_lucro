@@ -20,7 +20,7 @@ st.markdown("""
         }
             
     hr {
-        margin: 4px 0px;
+        margin: 2px 0px;
         }
             
     h1 {
