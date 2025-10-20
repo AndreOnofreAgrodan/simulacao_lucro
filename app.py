@@ -48,7 +48,7 @@ st.markdown("""
 <style>
 /* ======== Ajuste de espaçamento global ======== */
 .block-container {
-    padding-top: 0.8rem !important;
+    padding-top: 1.4rem !important;
     padding-bottom: 0rem !important;
 }
 
