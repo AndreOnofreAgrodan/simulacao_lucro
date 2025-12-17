@@ -422,7 +422,7 @@ with col1:
         min_value=10.0, 
         max_value=50.0, 
         value=TON_PREV_POR_HECTARE, 
-        step=0.01,
+        step=0.1,
         format="%.2f"
     )
 
