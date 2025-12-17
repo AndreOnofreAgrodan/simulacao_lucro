@@ -404,7 +404,7 @@ PRODUTIVIDADE_MEDIA_JAN_JUL = 31.23
 REFUGO_DEFAULT = 0.0808
 VALOR_MEDIO_CAIXA_JAN_JUL = 25.47
 TON_PREV_AGO_DEZ_BRUTO = 18_007.40  # BRUTO (sem refugo aplicado)
-TON_PREV_POR_HECTARE = 31.41
+TON_PREV_POR_HECTARE = 31.00
 CAIXAS_PREVISTAS_AGO_DEZ_BRUTO = 4_501_850.00
 
 
@@ -433,7 +433,7 @@ with col2:
         "Preço Venda (€/Cx)", 
         min_value=1.0,
         max_value=10.0,
-        value=5.0,
+        value=4.5,
         step=0.1,
         format="%.2f"
     )
@@ -457,7 +457,7 @@ with col4:
         "R$/Kg Campo", 
         min_value=0.5, 
         max_value=5.0, 
-        value=1.80, 
+        value=1.90, 
         step=0.1,
         format="%.2f"
     )
@@ -484,7 +484,7 @@ with col6:
         "R$/Cx Packing", 
         min_value=1.0, 
         max_value=15.0, 
-        value=5.94, 
+        value=4.9, 
         step=0.1,
         format="%.2f"
     )
@@ -496,7 +496,7 @@ with col7:
         "Desp. Adm (R$/Cx)", 
         min_value=0.0, 
         max_value=10.0, 
-        value=2.83, 
+        value=2.3, 
         step=0.1,
         format="%.2f"
     )
@@ -520,7 +520,7 @@ with col9:
         "Valor Médio Folha (R$)", 
         min_value=1_000_000.0, 
         max_value=5_000_000.0, 
-        value=2_300_000.0, 
+        value=2_200_000.0, 
         step=50_000.0,
         format="%.0f"
     )

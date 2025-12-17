@@ -423,7 +423,7 @@ with col1:
         "Produtividade Ton/ha", 
         min_value=10.0, 
         max_value=50.0, 
-        value=32.0,
+        value=31.0,
         step=0.5,
         format="%.1f"
     )
@@ -435,7 +435,7 @@ with col2:
         "Preço Venda (€/Cx)", 
         min_value=1.0, 
         max_value=10.0, 
-        value=5.0,
+        value=4.5,
         step=0.1,
         format="%.2f"
     )
@@ -459,7 +459,7 @@ with col4:
         "R$/Kg Campo", 
         min_value=0.5, 
         max_value=5.0, 
-        value=1.80,
+        value=1.90,
         step=0.1,
         format="%.2f"
     )
@@ -471,7 +471,7 @@ with col5:
         "% Refugo", 
         min_value=0.01, 
         max_value=0.20, 
-        value=0.05,
+        value=0.08,
         step=0.01,
         format="%.2f"
     )
@@ -487,7 +487,7 @@ with col6:
         "R$/Cx Packing", 
         min_value=1.0, 
         max_value=15.0, 
-        value=5.0,
+        value=4.9,
         step=0.1,
         format="%.2f"
     )
@@ -523,7 +523,7 @@ with col9:
         "Valor Médio Folha (R$)", 
         min_value=1000000.0, 
         max_value=5000000.0, 
-        value=2300000.0,
+        value=2200000.0,
         step=50000.0,
         format="%.0f"
     )
